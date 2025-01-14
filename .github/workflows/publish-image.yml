@@ -21,7 +21,7 @@ on:
 
 env:
     # Use docker.io for Docker Hub if empty
-    REGISTRY: ghcr.io
+    REGISTRY: ''
     # use DOCKERHUB_USERNAME as the name maybe different from the github username
     IMAGE_NAME: ${{ secrets.DOCKERHUB_USERNAME }}/automatic-ripping-machine
     TAG: latest
@@ -56,14 +56,6 @@ jobs:
 
             # Login against all registries
             # https://github.com/docker/login-action
-            -
-                name: Log into registry ${{ env.REGISTRY }}
-                uses: docker/login-action@9780b0c442fbb1117ed29e0efdff1e18412f7567
-                with:
-                    registry: ${{ env.REGISTRY }}
-                    username: ${{ github.repository_owner }}
-                    password: ${{ secrets.GITHUB_TOKEN }}
-
             -
                 name: Login to DockerHub
                 uses: docker/login-action@9780b0c442fbb1117ed29e0efdff1e18412f7567
