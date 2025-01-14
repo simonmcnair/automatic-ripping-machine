@@ -1,8 +1,8 @@
 ###########################################################
 # setup default directories and configs
-FROM automaticrippingmachine/arm-dependencies:1.2.2 AS base
+FROM simonmcnair/arm-dependencies:latest AS base
 
-LABEL org.opencontainers.image.source=https://github.com/automatic-ripping-machine/automatic-ripping-machine
+LABEL org.opencontainers.image.source=https://github.com/simonmcnair/automatic-ripping-machine
 LABEL org.opencontainers.image.license=MIT
 LABEL org.opencontainers.image.description='Automatic Ripping Machine for fully automated Blu-ray, DVD and audio disc ripping.'
 
